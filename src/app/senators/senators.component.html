@@ -1,0 +1,18 @@
+<div>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let senator of senators">
+        <mat-expansion-panel-header>
+          <mat-panel-title> {{ senator.first_name }} - {{ senator.last_name }} </mat-panel-title>
+          <mat-panel-description>
+            Details of the senator
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p> Twitter: @{{ senator.twitter_account }}</p>
+        <p> Facebook: @{{ senator.facebook_account }}</p>
+        <p> Youtube: @{{ senator.youtube_account }}</p>
+        <mat-action-row>
+          <a mat-button color="primary">FOLLOW</a>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+</div>
