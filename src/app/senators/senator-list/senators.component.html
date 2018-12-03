@@ -11,7 +11,7 @@
         <p> Facebook: @{{ senator.facebook_account }}</p>
         <p> Youtube: @{{ senator.youtube_account }}</p>
         <mat-action-row>
-          <a mat-button color="primary">FOLLOW</a>
+          <button mat-raised-button color="primary" (click)="onFollowClick(senator)">Follow</button>
         </mat-action-row>
       </mat-expansion-panel>
     </mat-accordion>
