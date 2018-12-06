@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
@@ -19,6 +20,8 @@ mongoose.connect(config.database.prefix + config.database.username + ':' + confi
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }));
+
+app.use("/images", express.static(path.join("backend/images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -55,14 +58,20 @@ app.get("/api/senators", (req, res, next) => {
 //     uri: 'https://api.propublica.org/congress/v1/115/senate/members.json',
 //     method: 'GET',
 //     json : true
-//   }, (err, res, body) => {
-// 		body.results[0].members.forEach(function(element){
-//       const senator = new Senator({
-//         ...element
+//   }, (err, response, body) => {
+//     Senator.deleteMany({}, () => {
+//       body.results[0].members.forEach(function(element){
+//         const senator = new Senator({
+//           ...element,
+//           image_link: 'https://theunitedstates.io/images/congress/450x550/'+ element.id +'.jpg'
+//         });
+//         senator.save();
+//         console.log(element.first_name + " " + element.last_name)
 //       });
-//       senator.save();
-// 			console.log(element.first_name + " " + element.last_name)
-// 		});
+//       res.status(200).json({
+//         message: "Senators loaded successfully!"
+//       });
+//     });
 //   if (err) { return console.log(err); }
 //   });
 // });

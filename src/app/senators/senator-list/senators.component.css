@@ -2,3 +2,40 @@
   display: block;
   margin-top: 1rem;
 }
+
+.senator-image {
+  height: 11rem;
+  margin: 1rem 0;
+}
+
+.social-wrapper {
+  height: 11rem;
+  margin: 1rem;
+}
+
+.senator-image img {
+  height: 100%;
+}
+
+.social-icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  width: 24px;
+}
+
+.social-fab-twitter {
+  background: #00aced
+}
+
+.social-fab-facebook {
+  background: #3b5998
+}
+
+.social-fab-youtube {
+  background: #ff0000
+}
+
+.expansion-panel-body {
+  display: flex;
+}

@@ -45,6 +45,7 @@ const senatorSchema = mongoose.Schema({
   lis_id: {type: String },
   missed_votes_pct: {type: Number },
   votes_with_party_pct: {type: Number },
+  image_link: { type: String }
 });
 
 module.exports = mongoose.model('Senator', senatorSchema);

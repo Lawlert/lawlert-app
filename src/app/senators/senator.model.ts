@@ -43,4 +43,5 @@ export interface Senator {
   lis_id: string;
   missed_votes_pct: number;
   votes_with_party_pct: number;
+  image_link: string;
 }

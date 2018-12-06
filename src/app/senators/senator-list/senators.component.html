@@ -1,18 +1,67 @@
 <div>
-    <mat-accordion>
-      <mat-expansion-panel *ngFor="let senator of senators">
-        <mat-expansion-panel-header>
-          <mat-panel-title> {{ senator.first_name }} - {{ senator.last_name }} </mat-panel-title>
-          <mat-panel-description>
-            Details of the senator
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p> Twitter: @{{ senator.twitter_account }}</p>
-        <p> Facebook: @{{ senator.facebook_account }}</p>
-        <p> Youtube: @{{ senator.youtube_account }}</p>
-        <mat-action-row>
-          <button mat-raised-button color="primary" (click)="onFollowClick(senator)">Follow</button>
-        </mat-action-row>
-      </mat-expansion-panel>
-    </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let senator of senators">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ senator.first_name }} - {{ senator.last_name }}
+        </mat-panel-title>
+        <mat-panel-description> Details of the senator </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="expansion-panel-body">
+        <div class="senator-image">
+          <img
+            [src]="senator.image_link"
+            [alt]="senator.first_name + senator.last_name"
+          />
+        </div>
+        <div class="social-wrapper">
+          <p>
+            <a
+              href="https://www.twitter.com/{{senator.twitter_account}}"
+              mat-mini-fab
+              target="_blank"
+              class="social-fab-twitter"
+              ><img
+                class="social-icon"
+                src="http://localhost:3000/images/twitter-logo.png"
+            /></a>
+            @{{ senator.twitter_account }}
+          </p>
+          <p>
+            <a
+              href="https://www.facebook.com/{{senator.facebook_account}}"
+              mat-mini-fab
+              target="_blank"
+              class="social-fab-facebook"
+              ><img
+                class="social-icon"
+                src="http://localhost:3000/images/facebook-box.png"
+            /></a>
+            @{{ senator.facebook_account }}
+          </p>
+          <p>
+            <a
+              href="https://www.youtube.com/{{senator.youtube_account}}"
+              mat-mini-fab
+              target="_blank"
+              class="social-fab-youtube"
+              ><img
+                class="social-icon"
+                src="http://localhost:3000/images/youtube_social_icon_dark.png"
+            /></a>
+            @{{ senator.youtube_account }}
+          </p>
+        </div>
+      </div>
+      <mat-action-row>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onFollowClick(senator)"
+        >
+          Follow
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>

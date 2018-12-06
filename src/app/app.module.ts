@@ -5,7 +5,8 @@ import {
   MatButtonModule,
   MatExpansionModule,
   MatSnackBarModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatIconModule
  } from '@angular/material';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatExpansionModule,
     MatToolbarModule,
     MatSnackBarModule,
+    MatIconModule,
     HttpClientModule,
     MatButtonModule
   ],
