@@ -1,0 +1,35 @@
+export interface Bill {
+  bill_id:  String;
+  bill_slug:  String;
+  bill_type:  String;
+  number:  String;
+  bill_uri:  String;
+  title:  String;
+  short_title:  String;
+  sponsor_title:  String;
+  sponsor_id:  String;
+  sponsor_name:  String;
+  sponsor_state:  String;
+  sponsor_party:  String;
+  sponsor_uri:  String;
+  gpo_pdf_uri:  String;
+  congressdotgov_url:  String;
+  govtrack_url:  String;
+  introduced_date:  String;
+  active:  Boolean;
+  last_vote:  String;
+  house_passage:  String;
+  senate_passage:  String;
+  enacted:  String;
+  vetoed:  String;
+  cosponsors:  Number;
+  cosponsors_by_party: {};
+  committees:  String;
+  committee_codes: [String];
+  subcommittee_codes: [String];
+  primary_subject:  String;
+  summary:  String;
+  summary_short:  String;
+  latest_major_action_date:  String;
+  latest_major_action:  String;
+}
