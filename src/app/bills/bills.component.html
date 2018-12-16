@@ -1,3 +1,27 @@
-<p>
-  bills works!
-</p>
+<div>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let bill of bills">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ (bill && bill.short_title.length > 20) ? (bill.short_title | slice:0:20) + '..':(bill.short_title) }}
+        </mat-panel-title>
+        <mat-panel-description> Details of the bill </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="expansion-panel-body">
+        <p>
+          {{ bill.title }}
+        </p>
+      </div>
+      <mat-action-row>
+        <a mat-button color="primary">Details</a>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onFollowClick(bill)"
+        >
+          Follow
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
