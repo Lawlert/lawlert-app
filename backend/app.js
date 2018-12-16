@@ -55,6 +55,15 @@ app.get("/api/senators", (req, res, next) => {
   });
 });
 
+app.get("/api/bills", (req, res, next) => {
+  Bill.find().then(documents => {
+    res.status(200).json({
+      message: "Senators fetched successfully!",
+      bills: documents
+    });
+  });
+});
+
 // Api used to load senators
 // const request = require('request');
 
