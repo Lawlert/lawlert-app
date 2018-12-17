@@ -6,7 +6,7 @@ import {
   MatExpansionModule,
   MatSnackBarModule,
   MatToolbarModule,
-  MatIconModule
+  MatIconModule, MatSidenavModule, MatListModule
  } from '@angular/material';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -14,13 +14,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SenatorsComponent } from './senators/senator-list/senators.component';
+import { BillsComponent } from './bills/bills.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoutingModule } from './app.routing';
-import { BillsComponent } from './bills/bills.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SenatorsComponent, BillsComponent],
+  declarations: [AppComponent, NavbarComponent, SenatorsComponent, MainNavComponent, BillsComponent],
   imports: [
     BrowserModule,
     MatCardModule,
@@ -31,7 +33,10 @@ import { BillsComponent } from './bills/bills.component';
     MatIconModule,
     HttpClientModule,
     MatButtonModule,
-    RoutingModule
+    RoutingModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
