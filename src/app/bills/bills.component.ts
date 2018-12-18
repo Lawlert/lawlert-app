@@ -11,20 +11,20 @@ import { MatSnackBar } from '@angular/material';
 })
 export class BillsComponent implements OnInit, OnDestroy {
   bills: Bill[] = [];
-  private senatorsSub: Subscription;
+  private billsSub: Subscription;
 
   constructor( public billsService: BillsService, public snackBar: MatSnackBar) {}
 
   ngOnInit() {
-    this.billsService.getSenators();
-    this.senatorsSub = this.billsService.getSenatorsUpdateListener()
+    this.billsService.getBills();
+    this.billsSub = this.billsService.getBillsUpdateListener()
       .subscribe((bills: Bill[]) => {
         this.bills = bills;
       });
   }
 
   ngOnDestroy() {
-    this.senatorsSub.unsubscribe();
+    this.billsSub.unsubscribe();
   }
 
   onFollowClick(bill: Bill) {

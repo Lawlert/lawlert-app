@@ -14,7 +14,7 @@ export class BillsService {
 
   constructor(private http: HttpClient) { }
 
-  getSenators() {
+  getBills() {
     this.http.get<{message: string, bills: Bill[]}>('http://localhost:3000/api/bills')
       .subscribe((billData) => {
         this.bills =  billData.bills;
@@ -22,7 +22,7 @@ export class BillsService {
     });
   }
 
-  getSenatorsUpdateListener() {
+  getBillsUpdateListener() {
     return this.billsUpdated.asObservable();
   }
 
